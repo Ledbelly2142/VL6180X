@@ -107,7 +107,7 @@ class Sensor:
             return self._address
         if not 8 <= address <= 127:
             raise ValueError("Wrong address")
-        self._set_reg8(0x0212, address)
+        self.myWrite16(0x0212, address)
         self._address = address
 
     def range(self):
